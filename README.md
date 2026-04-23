@@ -52,8 +52,8 @@ from https://github.com/opslane/opslane/README.md
 # One-time setup — auto-detects dev server, indexes app 
 /verify-setup 
  
-# Run verification against a spec 
-/verify 
+# Run verification against a spec; spec.md is at repo root
+/verify @spec.md
 ``` 
  
 You can also use the '/verify' with headless claude. 
@@ -62,3 +62,9 @@ Assumes `/verify-setup` and the server is running in another terminal.
 ``` 
 claude -p "the server is already running\n/verify @spec.md" 
 ``` 
+
+# Troubleshooting
+
+`Dev server not running at http://localhost:5000`
+
+Edit the `.verify/config.json` and set baseUrl to `127.0.0.1:5000`.
