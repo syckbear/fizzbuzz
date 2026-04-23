@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FizzBuzz</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/htmx.org@2/dist/htmx.min.js"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-base-200">
+  <div class="card w-full max-w-md bg-base-100 shadow-xl">
+    <div class="card-body gap-4">
+      <h1 class="card-title text-2xl font-bold">FizzBuzz</h1>
+      <form
+        hx-post="/fizzbuzz"
+        hx-target="#result"
+        hx-swap="innerHTML"
+        class="flex flex-col gap-3"
+      >
+        <label class="form-control w-full">
+          <div class="label">
+            <span class="label-text">Number (1–20)</span>
+          </div>
+          <input
+            type="number"
+            name="number"
+            min="1"
+            max="20"
+            required
+            placeholder="Enter a number"
+            class="input input-bordered w-full"
+          />
+        </label>
+        <button type="submit" class="btn btn-primary">Calculate</button>
+      </form>
+      <div id="result"></div>
+    </div>
+  </div>
+</body>
+</html>
