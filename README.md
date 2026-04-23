@@ -18,8 +18,9 @@ uv sync
 Install opslane 
  
 ``` 
-mkdir -p .claude/skills/opslane 
-git clone https://github.com/opslane/opslane.git .claude/skills/opslane 
+mkdir -p .claude/skills tmp
+git clone https://github.com/opslane/opslane.git tmp
+cp -a tmp/skills/* .claude/skills/
 ``` 
  
 Install Playwright 
